@@ -1,11 +1,12 @@
-﻿@model string
+﻿@*@model List<Student>
+*@
 
 @{
     //string[] names = (string[])ViewData["names"];
 
     //int[] nums = ViewBag.numbers;
 
-    string name = "salam";
+    //string name = "salam";
 }
 
 @*@foreach (var item in nums)
@@ -20,4 +21,31 @@
 }
 *@
 
-<h1>@name</h1>
+@*<h1>@name</h1> 
+*@
+
+@*@foreach (var item in Model)
+{
+    <h1>@item.Id</h1>
+    <h1>@item.FullName</h1>
+    <h1>@item.Age</h1>
+}*@
+
+@*<span>@ViewBag.address</span>
+*@
+
+
+@model HomeVM
+
+<main>
+    <ul>
+        @foreach (var item in Model.Students)
+        {
+            <li>@item.FullName</li>
+            <li>@item.Age</li>
+        }
+    </ul>   
+    <h1>@Model.Product.Name</h1>
+    <h1>@Model.Product.Price</h1>
+</main>
+
